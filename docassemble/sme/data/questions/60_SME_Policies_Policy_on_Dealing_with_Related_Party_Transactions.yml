@@ -1,0 +1,24 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "POLICY ON DEALING WITH RELATED PARTY TRANSACTIONS"
+  i_name ='60_SME_Policies_Policy_on_Dealing_with_Related_Party_Transactions'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for NOMINATION & REMUNERATION POLICY
+fields : 
+  - Issuer Company Name : issuer_company
+  - Material Modification Percentage : material_modification_percent
+    datatype : number
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None

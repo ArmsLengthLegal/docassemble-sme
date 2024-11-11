@@ -1,0 +1,41 @@
+features:
+  labels above fields: True
+---
+modules:
+  - docassemble.interview.get_file_by_id
+  - docassemble.interview.gd_fetch
+  - docassemble.interview.database
+  - docassemble.interview.dbconnection
+--- 
+objects:
+  template_file: DAFile
+--- 
+event : test
+question : |
+    [${pdf_url}](${pdf_url})
+---
+code : |
+  interview_id = None
+  docx_url = return_file_public_url(generated_doc.docx,user_info().id,f'{filename}.docx')[1]
+  pdf_url = return_file_public_url(generated_doc.pdf,user_info().id,f'{filename}.pdf')[1]
+  test
+  file_save_query = f" insert into digi_completed_documents(user_id,interview_id,document_url,pdf_url,session_id,doc_name) values ({user_info().id},{interview_id},'{docx_url}','{pdf_url}','{user_info().session}','{filename}')"
+  save_response= None
+  save_response = raw_query(file_save_query,False)
+  file_save_response = save_response
+---  
+code: |
+  path = 'Templates/Merchant Banker'
+  iname = f"{i_name}.docx"
+  template_file.initialize(filename='gfile.docx')
+  fetch_file(get_file_id_from_folder(iname,path)['id'], template_file.path())
+  template_file.commit()
+  template_file.fetched = True
+---
+attachment:
+  name: Your letter
+  filename: letter
+  variable name : generated_doc
+  docx template file:
+    code: template_file
+need: template_file.fetched

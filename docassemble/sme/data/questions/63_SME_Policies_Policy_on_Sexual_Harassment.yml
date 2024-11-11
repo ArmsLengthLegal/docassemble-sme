@@ -1,0 +1,25 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "POLICY ON PREVENTION OF SEXUAL HARASSMENT"
+  i_name ='63_SME_Policies_Policy_on_Sexual_Harassment'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for POLICY ON PREVENTION OF SEXUAL HARASSMENT
+fields : 
+  - Issuer Company Name : issuer_company
+  - POSH COMMITTEE EMAIL ID : POSH_committee_email
+    datatype : email
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None

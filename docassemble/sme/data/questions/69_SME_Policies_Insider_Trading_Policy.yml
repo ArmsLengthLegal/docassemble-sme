@@ -1,0 +1,23 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "CODE OF PRACTICES & PROCEDURES FOR FAIR DISCLOSURE OF UNPUBLISHED PRICE SENSITIVE INFORMATION"
+  i_name ='69_SME_Policies_Insider_Trading_Policy'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for Code of Conduct for Regulating, Monitoring and Reporting of Trading by Designated Person
+fields : 
+  - Issuer Company Name : issuer_company
+  - Effective Date : insider_effective_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') }    

@@ -1,0 +1,26 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "POLICY ON PRESERVATION OF DOCUMENTS"
+  i_name ='66_SME_Policies_Policy_on_Preservation_of_Documents'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for POLICY ON PRESERVATION OF DOCUMENTS
+fields : 
+  - Issuer Company Name : issuer_company
+  - Meeting Date : preserve_documents_meeting_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') }    
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None

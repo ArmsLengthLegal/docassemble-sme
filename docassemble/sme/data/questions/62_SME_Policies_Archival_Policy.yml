@@ -1,0 +1,27 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "ARCHIVAL POLICY"
+  i_name ='62_SME_Policies_Archival_Policy'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for POLICY ON PREVENTION OF SEXUAL HARASSMENT
+fields : 
+  - Issuer Company Name : issuer_company
+  - Effective Date : archive_effective_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') } 
+  - Stock Exchange Name : stock_exchange_name
+  - Website address : issuer_company_website
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None

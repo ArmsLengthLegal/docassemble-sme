@@ -1,0 +1,23 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "CODE OF PRACTICES & PROCEDURES FOR FAIR DISCLOSURE OF UNPUBLISHED PRICE SENSITIVE INFORMATION"
+  i_name ='70_SME_Policies_Code_of_Fair_Disclosure_of_Unpublished_Price_Sensitive_Information'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for CODE OF PRACTICES & PROCEDURES FOR FAIR DISCLOSURE OF UNPUBLISHED PRICE SENSITIVE INFORMATION LEAK OF UNPUBLISHED PRICE SENSITIVE INFORMATION
+fields : 
+  - Issuer Company Name : issuer_company
+  - Effective Date : cop_upsi_effective_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') }    

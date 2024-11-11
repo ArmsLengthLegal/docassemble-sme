@@ -1,0 +1,51 @@
+include : 
+  - sme_master_interview.yml
+--- 
+code : |
+  policy_check_box = {'74_SME_Policies_Policy_and_Procedures_for_Inquiry_in_Case_of_Leak_or_Suspected_Leak_of_UPSI': 'POLICY AND PROCEDURE FOR INQUIRY IN CASE OF LEAK OR SUSPECTED LEAK OF UNPUBLISHED PRICE SENSITIVE INFORMATION', '73_SME_Policies_BOARD_DIVERSITY_POLICY': 'BOARD DIVERSITY POLICY', '71_SME_Policies_Familiarisation_Programme': 'FAMILIARIZATION PROGRAMME FOR INDEPENDENT DIRECTORS', '70_SME_Policies_Code_of_Fair_Disclosure_of_Unpublished_Price_Sensitive_Information': 'CODE OF PRACTICES & PROCEDURES FOR FAIR DISCLOSURE OF UNPUBLISHED PRICE SENSITIVE INFORMATION', '69_SME_Policies_Insider_Trading_Policy': 'Code of Conduct for Regulating, Monitoring and Reporting of Trading by Designated Person', '68_SME_Policies_Code_of_Conduct_-_Policy': 'CODE OF BUSINESS CONDUCT AND ETHICS', '66_SME_Policies_Policy_on_Preservation_of_Documents': 'POLICY ON PRESERVATION OF DOCUMENTS', '63_SME_Policies_Policy_on_Sexual_Harassment': 'POLICY ON PREVENTION OF SEXUAL HARASSMENT', '62_SME_Policies_Archival_Policy': 'ARCHIVAL POLICY', '61_SME_Policies_Nomination_and_Remuneration_Policy': 'NOMINATION & REMUNERATION POLICY', '60_SME_Policies_Policy_on_Dealing_with_Related_Party_Transactions': 'POLICY ON DEALING WITH RELATED PARTY TRANSACTIONS', '59_SME_Policies_Risk_Assessment_and_Management_Policy': 'RISK ASSESSMENT AND MANAGEMENT POLICY'}
+
+
+
+---
+mandatory : true
+code : |
+  selected_policies
+  upsi_effective_date
+  issuer_company
+  test
+  
+  filename = "test"
+  i_name = "test"
+
+---
+question : |
+  Please fill in the following Details
+fields :
+  - Issuer Company Name : issuer_company
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None
+---
+question : |
+  Please select the polices
+fields  :
+  - Policies : selected_policies
+    datatype : checkboxes 
+    code : |
+        policy_check_box
+---
+event : test
+question : |
+    ${repr(selected_policies)}
+---
+question : |
+  Please fill in the required fields 
+fields : 
+  - Effective Date : upsi_effective_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') }    
+    show if : 
+      code : |
+        bool(selected_policies["74_SME_Policies_Policy_and_Procedures_for_Inquiry_in_Case_of_Leak_or_Suspected_Leak_of_UPSI"])
+              
+      

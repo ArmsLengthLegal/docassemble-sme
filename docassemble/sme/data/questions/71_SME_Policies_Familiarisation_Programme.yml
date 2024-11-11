@@ -1,0 +1,21 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "FAMILIARIZATION PROGRAMME FOR INDEPENDENT DIRECTORS"
+  i_name = '71_SME_Policies_Familiarisation_Programme'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for FAMILIARIZATION PROGRAMME FOR INDEPENDENT DIRECTORS
+fields : 
+  - Issuer Company Name : issuer_company
+   

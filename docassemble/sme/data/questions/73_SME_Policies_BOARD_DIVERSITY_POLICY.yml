@@ -1,0 +1,21 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "BOARD DIVERSITY POLICY"
+  i_name = '73_SME_Policies_BOARD_DIVERSITY_POLICY'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for BOARD DIVERSITY POLICY
+fields : 
+  - Issuer Company Name : issuer_company
+   

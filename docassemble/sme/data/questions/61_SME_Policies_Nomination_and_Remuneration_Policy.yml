@@ -1,0 +1,25 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "NOMINATION & REMUNERATION POLICY"
+  i_name ='61_SME_Policies_Nomination_and_Remuneration_Policy'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for NOMINATION & REMUNERATION POLICY
+fields : 
+  - Issuer Company Name : issuer_company
+  - Effective Date : remuneration_effective_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') } 
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None

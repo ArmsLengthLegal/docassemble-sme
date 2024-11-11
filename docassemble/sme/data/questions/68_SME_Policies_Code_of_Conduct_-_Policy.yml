@@ -1,0 +1,26 @@
+include : 
+  - sme_master_interview.yml
+--- 
+mandatory : true
+code : |
+  development_mode = True
+  issuer_company
+  filename = "CODE OF BUSINESS CONDUCT AND ETHICS"
+  i_name ='68_SME_Policies_Code_of_Conduct_-_Policy'
+  filename = 'test'
+  file_save_response
+  form_74 = True
+  response(url="/dashboard/documents")
+  
+
+---
+question : |
+  Please fill Information for CODE OF BUSINESS CONDUCT AND ETHICS
+fields : 
+  - Issuer Company Name : issuer_company
+  - Effective Date : code_of_conduct_effective_date
+    datatype: date
+    default: ${ format_date(today(), format='d/M/yyyy') }    
+  - Please upload Company Logo : issuer_company_logo
+    datatype: file
+    file css class: None
