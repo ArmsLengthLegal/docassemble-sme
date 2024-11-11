@@ -7,7 +7,6 @@ code : |
   issuer_company
   filename = "POLICY ON PRESERVATION OF DOCUMENTS"
   i_name ='66_SME_Policies_Policy_on_Preservation_of_Documents'
-  filename = 'test'
   file_save_response
   form_74 = True
   response(url="/dashboard/documents")

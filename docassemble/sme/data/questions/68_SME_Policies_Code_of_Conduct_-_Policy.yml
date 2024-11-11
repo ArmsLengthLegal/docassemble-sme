@@ -7,7 +7,6 @@ code : |
   issuer_company
   filename = "CODE OF BUSINESS CONDUCT AND ETHICS"
   i_name ='68_SME_Policies_Code_of_Conduct_-_Policy'
-  filename = 'test'
   file_save_response
   form_74 = True
   response(url="/dashboard/documents")

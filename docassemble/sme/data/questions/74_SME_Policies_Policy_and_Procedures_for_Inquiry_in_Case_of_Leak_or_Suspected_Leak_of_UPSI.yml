@@ -7,7 +7,6 @@ code : |
   issuer_company
   filename = "POLICY AND PROCEDURE FOR INQUIRY IN CASE OF LEAK OR SUSPECTED LEAK OF UNPUBLISHED PRICE SENSITIVE INFORMATION"
   i_name ='74_SME_Policies_Policy_and_Procedures_for_Inquiry_in_Case_of_Leak_or_Suspected_Leak_of_UPSI'
-  filename = 'test'
   file_save_response
   form_74 = True
   response(url="/dashboard/documents")

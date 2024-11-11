@@ -7,7 +7,6 @@ code : |
   issuer_company
   filename = "POLICY ON PREVENTION OF SEXUAL HARASSMENT"
   i_name ='63_SME_Policies_Policy_on_Sexual_Harassment'
-  filename = 'test'
   file_save_response
   form_74 = True
   response(url="/dashboard/documents")

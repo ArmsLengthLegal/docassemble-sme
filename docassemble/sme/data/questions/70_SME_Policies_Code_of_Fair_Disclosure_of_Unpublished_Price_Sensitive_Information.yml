@@ -7,7 +7,6 @@ code : |
   issuer_company
   filename = "CODE OF PRACTICES & PROCEDURES FOR FAIR DISCLOSURE OF UNPUBLISHED PRICE SENSITIVE INFORMATION"
   i_name ='70_SME_Policies_Code_of_Fair_Disclosure_of_Unpublished_Price_Sensitive_Information'
-  filename = 'test'
   file_save_response
   form_74 = True
   response(url="/dashboard/documents")

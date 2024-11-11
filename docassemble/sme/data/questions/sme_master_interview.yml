@@ -15,10 +15,9 @@ question : |
     [${pdf_url}](${pdf_url})
 ---
 code : |
-  interview_id = None
+  interview_id = 12
   docx_url = return_file_public_url(generated_doc.docx,user_info().id,f'{filename}.docx')[1]
   pdf_url = return_file_public_url(generated_doc.pdf,user_info().id,f'{filename}.pdf')[1]
-  test
   file_save_query = f" insert into digi_completed_documents(user_id,interview_id,document_url,pdf_url,session_id,doc_name) values ({user_info().id},{interview_id},'{docx_url}','{pdf_url}','{user_info().session}','{filename}')"
   save_response= None
   save_response = raw_query(file_save_query,False)

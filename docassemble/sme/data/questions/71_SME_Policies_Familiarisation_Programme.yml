@@ -7,7 +7,6 @@ code : |
   issuer_company
   filename = "FAMILIARIZATION PROGRAMME FOR INDEPENDENT DIRECTORS"
   i_name = '71_SME_Policies_Familiarisation_Programme'
-  filename = 'test'
   file_save_response
   form_74 = True
   response(url="/dashboard/documents")
